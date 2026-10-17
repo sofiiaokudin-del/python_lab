@@ -15,7 +15,7 @@ print("Голосних:", v)
 print("Слів:", w)
 print("-" * 30)
 
-#Завдання 2. Нормалізація ПІБ
+# Завдання 2. Нормалізація ПІБ
 t = input("Введіть ПІБ: ")
 p = t.split()
 
@@ -23,6 +23,50 @@ if len(p) == 3:
     r = f"{p[0].capitalize()} {p[1][0].upper()}.{p[2][0].upper()}."
     print("Результат:", r)
 else:
-    print("Помилка: введіть рівно три слова (прізвище, ім'я, по батькові).")
+    print("Помилка: введіть рівно три слова.")
 
 print("-" * 30)
+
+#Завдання 3. Анаграми
+t1 = input("Перший рядок: ")
+t2 = input("Другий рядок: ")
+
+a = t1.lower().replace(" ", "")
+b = t2.lower().replace(" ", "")
+if sorted(a) == sorted(b):
+    print("Рядки є анаграмами.")
+else:
+    print("Рядки не є анаграмами.")
+print("-" * 30)
+
+#Завдання 4. Аналіз речення
+t = input("Введіть речення: ")
+w = t.split()
+
+if w:
+    m1 = min(len(x) for x in w)
+    m2 = max(len(x) for x in w)
+
+    longs = [x for x in w if len(x) == m2]
+    shorts = [x for x in w if len(x) == m1]
+    uniq = {x.lower() for x in w}
+
+    print("Найдовші:", ", ".join(longs))
+    print("Найкоротші:", ", ".join(shorts))
+    print("Унікальних слів:", len(uniq))
+
+    old = input("Яке слово замінити?: ")
+    new = input("На яке слово замінити?: ")
+    print("Після заміни:", t.replace(old, new))
+
+#Додаткове завдання
+t = input("Введіть текст: ")
+k = int(input("Введіть величину зсуву: "))
+s = ""
+for c in t:
+    s += chr(ord(c) + k)
+print("Зашифрований текст:", s)
+d = ""
+for c in s:
+    d += chr(ord(c) - k)
+print("Розшифрований текст:", d)
