@@ -1,4 +1,4 @@
-"""
+
 #Завдання 1
 n = 20
 s = 0
@@ -82,4 +82,3 @@ else:
         for c in range(r):
             print("*", end="")
         print()
-"""
