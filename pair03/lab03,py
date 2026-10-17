@@ -1,0 +1,28 @@
+#Завдання 1. Статистика тексту
+t = input("Введіть текст: ")
+s = len(t)
+l = sum(1 for c in t if c.isalpha())
+d = sum(1 for c in t if c.isdigit())
+p = sum(1 for c in t if c == " ")
+v = sum(1 for c in t.lower() if c in "аеєиіїоуюяaeiou")
+w = len(t.split())
+
+print("Символів:", s)
+print("Літер:", l)
+print("Цифр:", d)
+print("Пробілів:", p)
+print("Голосних:", v)
+print("Слів:", w)
+print("-" * 30)
+
+#Завдання 2. Нормалізація ПІБ
+t = input("Введіть ПІБ: ")
+p = t.split()
+
+if len(p) == 3:
+    r = f"{p[0].capitalize()} {p[1][0].upper()}.{p[2][0].upper()}."
+    print("Результат:", r)
+else:
+    print("Помилка: введіть рівно три слова (прізвище, ім'я, по батькові).")
+
+print("-" * 30)
